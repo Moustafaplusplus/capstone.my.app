@@ -1,4 +1,5 @@
 import photo from './assets/restauranfood.jpg'
+import calltoaction from './calltoaction.css'
 
 function CallToAction() {
     return (

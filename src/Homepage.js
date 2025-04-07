@@ -1,4 +1,5 @@
 import CallToAction from "./CallToAction";
+import CustomersSay from "./CustomersSay";
 import Header from "./Header";
 import Specials from "./Specials";
 
@@ -8,6 +9,7 @@ function Homepage(){
         <Header/>
         <CallToAction/>
         <Specials/>
+        <CustomersSay/>
         </>
     )
 }

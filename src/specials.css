@@ -1,0 +1,72 @@
+.specials-s1{
+    display: flex;
+    align-items: center;
+    padding-top:5rem;
+    justify-content:center;
+  }
+  
+  .specials-h1{
+    font-size: 2.5rem;
+    margin-right: 30rem;
+    margin-left: -80px;
+  }
+  
+  .specials-online-menu{
+    padding: 10px;
+    width:250px;
+    height: 3.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color:#F4CE14;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #222;
+  }
+  
+  .offering{
+    width:220px;
+    background-color: #ccc;
+    border-radius: 8px;
+    justify-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.05);
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .offering-img{
+    width: 220px;
+    height: 145px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .offering-h2{
+    font-size: 1.3rem;
+  }
+  .offering-p{
+    font-size: 0.75rem;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .offering-button{
+    padding: 10px;
+    width:11rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background-color:#F4CE14;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #222;
+  }
+  
+  .dishes{
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    padding: 0;
+  }
