@@ -1,11 +1,14 @@
 
+import BookingPage from './BookingPage';
+import CallToAction from './CallToAction';
 
-function Main(){
-    return(
+function Main() {
+    return (
+        
         <main>
-            
+
         </main>
-    )
+    );
 }
 
-export default Main
+export default Main;
