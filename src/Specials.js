@@ -20,7 +20,7 @@ function Specials(){
         </div>
         <div className='offering'>
             <img className='offering-img' src={greeksalad} alt='greeksalad'/>
-            <h2 className='offering-h2'>Greek Salad: $9.000</h2>
+            <h2 className='offering-h2'>Greek Salad: $9.00</h2>
             <p className='offering-p'>Greek salad mixes cucumbers, tomatoes, olives, and red onions, topped with feta cheese. 
                 A drizzle of olive oil and oregano. It's a fresh.</p>
             <button className='offering-button'>Order a Delivery</button>
