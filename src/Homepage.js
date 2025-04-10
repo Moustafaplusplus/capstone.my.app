@@ -1,25 +1,22 @@
-import CallToAction from "./CallToAction";
-import Chicago from "./Chicago";
-import CustomersSay from "./CustomersSay";
-import Footer from "./Footer";
-import Header from "./Header";
-import Specials from "./Specials";
+import React from 'react';
+import CallToAction from './CallToAction';
+import Specials from './Specials';
+import CustomersSay from './CustomersSay';
+import Chicago from './Chicago';
+import Footer from './Footer';
+import Header from './Header';
 
-
-
-function Homepage(){
-    return(
-
-
+function Homepage() {
+    return (
         <>
-        <Header/>
-        <CallToAction/>
-        <Specials/>
-        <CustomersSay/>
-        <Chicago/>
-        <Footer/>
+            <Header />
+            <CallToAction />
+            <Specials />
+            <CustomersSay />
+            <Chicago />
+            <Footer />
         </>
-    )
+    );
 }
 
 export default Homepage;
