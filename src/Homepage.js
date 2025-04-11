@@ -5,8 +5,14 @@ import CustomersSay from './CustomersSay';
 import Chicago from './Chicago';
 import Footer from './Footer';
 import Header from './Header';
+import { useEffect } from 'react';
 
 function Homepage() {
+
+    useEffect(() => {
+        document.title = 'Little Lemon';
+      }, []);
+
     return (
         <>
             <Header />

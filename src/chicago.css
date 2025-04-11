@@ -1,52 +1,62 @@
-.chicago{
+.chicago {
     display: flex;
+    flex-wrap: wrap;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    margin-bottom: 10px;
-}
-
-.chicago-text{
-    margin-left: 10rem;
-}
-
-.chicago-h1{
+    margin-bottom: 2rem;
+  }
+  
+  .chicago-text {
+    margin-left: 8vw;
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .chicago-h1 {
     font-size: 2.5rem;
-    color:#F4CE14;
+    color: #F4CE14;
     margin: 0;
-}
-
-.chicago-h2{
+  }
+  
+  .chicago-h2 {
     font-size: 1.75rem;
     color: #495E57;
     margin: 0;
-}
-
-.p{
+  }
+  
+  .p {
     color: #495E57;
-    width: 450px;
-    padding-right: 12rem;
-    padding-top: 2rem;
-}
-
-.imag1, .imag2{
-  position:absolute;
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  box-shadow: 10px 010px 5px rgba(0,0,0,0.3);
-}
-
-.imag1{
-    top:1350px
-}
-
-.imag2{
-    top:1410px;
-    right:360px;
-}
-
-.image-container{
+    width: 90%;
+    max-width: 28.125rem; /* 450px */
+    padding-right: 10vw;
+    padding-top: 3rem;
+  }
+  
+  .image-container {
     display: flex;
-}
-
-
+    justify-content: center;
+    position: relative;
+    margin-top: 2rem;
+    flex: 1;
+    min-width: 280px;
+  }
+  
+  .imag1,
+  .imag2 {
+    position: absolute;
+    width: 12.5rem; /* 200px */
+    height: 18.75rem; /* 300px */
+    object-fit: cover;
+    box-shadow: 0.625rem 0.625rem 0.313rem rgba(0, 0, 0, 0.3);
+  }
+  
+  /* These top/right values need more flexible styling */
+  .imag1 {
+    bottom: 0rem;
+    left:4rem; /* 1350px */
+  }
+  
+  .imag2 {
+    right: 0rem; /* 1410px */
+    right: 20rem; /* 360px */
+  }
