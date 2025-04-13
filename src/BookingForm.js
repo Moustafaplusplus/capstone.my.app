@@ -1,5 +1,8 @@
 import bookingform from './bookingform.css'
 import { useState } from 'react';
+import { submitAPI } from './api'
+import { useNavigate } from 'react-router-dom';
+import ConfirmedBooking from './ConfirmedBooking';
 
 function BookingForm({availableTimes,updateTimes}){
 
@@ -8,7 +11,7 @@ function BookingForm({availableTimes,updateTimes}){
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false);
-
+    const navigate = useNavigate();
     const today = new Date().toISOString().split("T")[0];
 
     const handleDateChange = (e) => {
@@ -17,20 +20,37 @@ function BookingForm({availableTimes,updateTimes}){
         updateTimes(selectedDate);
       };
 
-    const handleSubmit = (e)=> {
-        e.preventDefault()
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+      
         if (!date || !time || !guests || !occasion) {
-            alert("Please fill out all fields.");
-            return;
-          }
-        console.log({ date, time, guests, occasion });
-
-        setDate('')
-        setTime('')
-        setGuests(1)
-        setOccasion('')
-        setFormSubmitted(true);
-    };
+          alert("Please fill out all fields.");
+          return;
+        }
+      
+        const formData = { date, time, guests, occasion };
+      
+        const response = await submitAPI(formData); // simulate API submission
+      
+        if (response) {
+          setFormSubmitted(true);
+          // Reset fields
+          setDate('');
+          setTime('');
+          setGuests(1);
+          setOccasion('');
+          navigate('/confirmation', {
+            state: {
+              date,
+              time,
+              guests,
+              occasion
+            }
+          });
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      };
 
 
     return(

@@ -1,34 +1,38 @@
 import Header from "./Header";
 import BookingForm from "./BookingForm";
 import { useReducer,useEffect } from "react";
-
-
-const initializeTimes = () => {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  };
-
+import { fetchAPI } from './api'
 
 const timesReducer = (state, action) => {
     switch (action.type) {
-        case 'UPDATE_TIMES':
-            return initializeTimes();
-        default:
-            return state;
+      case "INITIALIZE_TIMES":
+        return action.payload;
+      case "UPDATE_TIMES":
+        return action.payload;
+      default:
+        return state;
     }
-};
+  };
+
+
 
 function BookingPage(){
 
-    useEffect(() => {
-        document.title = 'Reservations';
-      }, []);
+    const [availableTimes, dispatch] = useReducer(timesReducer, []);
 
-    const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+  useEffect(() => {
+    document.title = 'Reservations';
+    const today = new Date();
+    fetchAPI(today).then(times => {
+      dispatch({ type: "INITIALIZE_TIMES", payload: times });
+    });
+  }, []);
 
-
-    const updateTimes = (selectedDate) => {
-        dispatch({ type: 'UPDATE_TIMES', payload: selectedDate });
-      };
+  const updateTimes = (selectedDate) => {
+    fetchAPI(new Date(selectedDate)).then(times => {
+      dispatch({ type: "UPDATE_TIMES", payload: times });
+    });
+  };
 
     return(
         <>
