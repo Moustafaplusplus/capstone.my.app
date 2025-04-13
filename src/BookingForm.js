@@ -2,7 +2,6 @@ import bookingform from './bookingform.css'
 import { useState } from 'react';
 import { submitAPI } from './api'
 import { useNavigate } from 'react-router-dom';
-import ConfirmedBooking from './ConfirmedBooking';
 
 function BookingForm({availableTimes,updateTimes}){
 
@@ -10,8 +9,9 @@ function BookingForm({availableTimes,updateTimes}){
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('');
-    const [formSubmitted, setFormSubmitted] = useState(false);
+    
     const navigate = useNavigate();
+
     const today = new Date().toISOString().split("T")[0];
 
     const handleDateChange = (e) => {
@@ -33,13 +33,7 @@ function BookingForm({availableTimes,updateTimes}){
         const response = await submitAPI(formData); // simulate API submission
       
         if (response) {
-          setFormSubmitted(true);
-          // Reset fields
-          setDate('');
-          setTime('');
-          setGuests(1);
-          setOccasion('');
-          navigate('/confirmation', {
+            navigate('/confirmation', {
             state: {
               date,
               time,
@@ -56,9 +50,7 @@ function BookingForm({availableTimes,updateTimes}){
     return(
         <>
             <h1 className="bookingheader">Book a Table</h1>
-            {formSubmitted && (
-        <p className="success-message">🎉 Your reservation has been submitted successfully!</p>
-      )}
+            
             <form >
                 <label htmlFor="res-date">Choose date</label>
                 <input type="date"  min={today} onChange={handleDateChange} id="res-date" value={date} required/>

@@ -22,7 +22,9 @@ function BookingPage(){
 
   useEffect(() => {
     document.title = 'Reservations';
+
     const today = new Date();
+    
     fetchAPI(today).then(times => {
       dispatch({ type: "INITIALIZE_TIMES", payload: times });
     });
